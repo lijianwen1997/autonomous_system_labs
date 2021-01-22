@@ -1,0 +1,5 @@
+<launch>
+  <node name="pos_plot" pkg="rqt_plot" type="rqt_plot" args="/distance /cmd_vel/linear/x" />
+  <!-- You should change the time stamp so that the launch file can find the bagfile you just created-->
+  <node name="record" pkg="rosbag" type="play" args=" $(find topics_quiz)/bags/pid_2021-01-14-20-42-05.bag"/>
+</launch>

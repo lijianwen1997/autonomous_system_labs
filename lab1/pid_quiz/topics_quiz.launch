@@ -1,0 +1,6 @@
+<launch>
+    <node name="pos_plot" pkg="rqt_plot" type="rqt_plot" args="/distance /cmd_vel/linear/x" />
+    <!-- "-o" will help you Prepend PREFIX to beginning of bag name before date stamp-->
+    <node name="record" pkg="rosbag" type="record" args="-o $(find topics_quiz)/bags/pid /cmd_vel /distance"/>
+    <node name="controller" pkg="topics_quiz" type="controller.py" output="screen" />
+</launch>
